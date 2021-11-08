@@ -1,8 +1,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: kubernetes-dashboard-2
-  namespace: default
+  name: kubernetes-dashboard
+  namespace: kube-system
 spec:
   chart:
     spec:
