@@ -1,0 +1,92 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: openvpn
+  namespace: kube-system
+spec:
+  chart:
+    spec:
+      chart: stenic
+      sourceRef:
+        kind: HelmRepository
+        name: openvpn-as
+        namespace: kube-system
+      version: '>=2.8.6'
+  interval: 1m0s
+  values:
+    replicaCount: 1
+
+    updateStrategy: {}
+
+    imagePullSecretName:
+
+    image:
+      repository: jfelten/openvpn-docker
+      tag: 1.1.0
+      pullPolicy: IfNotPresent
+    service:
+      type: LoadBalancer
+      externalPort: 443
+      internalPort: 443
+
+      externalIPs: []
+      nodePort: 32085
+
+    annotations: {}
+
+    podAnnotations: {}
+
+    ipForwardInitContainer: false
+
+    resources:
+    limits:
+      cpu: 300m
+      memory: 128Mi
+    requests:
+      cpu: 300m
+      memory: 128Mi
+
+    readinessProbe:
+      initialDelaySeconds: 5
+      periodSeconds: 5
+      successThreshold: 2
+
+    persistence:
+      enabled: true
+ 
+    accessMode: ReadWriteOnce
+      size: 2M
+    openvpn:
+
+      OVPN_NETWORK: 10.240.0.0
+
+      OVPN_SUBNET: 255.255.0.0
+
+      OVPN_PROTO: tcp
+
+      OVPN_K8S_POD_NETWORK: "10.0.0.0"
+
+      OVPN_K8S_POD_SUBNET: "255.0.0.0"
+
+      DEFAULT_ROUTE_ENABLED: true
+
+      dhcpOptionDomain: true
+
+      redirectGateway: true
+
+      useCrl: false
+
+      taKey: false
+
+    istio:
+      enabled: false
+      proxy:
+        port: 15001
+    iptablesExtra: []
+
+    ccd:
+      enabled: false
+      config: {}
+
+    nodeSelector: {}
+    tolerations: []
