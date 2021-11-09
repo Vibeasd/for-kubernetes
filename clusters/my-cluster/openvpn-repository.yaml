@@ -5,6 +5,4 @@ metadata:
   namespace: kube-system
 spec:
   interval: 30m0s
-  url: https://github.com/jfelten/openvpn-docker
-  url: https://github.com/kubernetes/charts/tree/master/stable/openvpn
-  url: https://github.com/jfelten/helm-charts
+  url: https://stenic.github.io/helm-charts/
