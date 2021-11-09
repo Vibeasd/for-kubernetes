@@ -9,7 +9,7 @@ spec:
       chart: stenic
       sourceRef:
         kind: HelmRepository
-        name: openvpn
+        name: stenic
         namespace: kube-system
       version: '>=0.1.9'
   interval: 1m0s
