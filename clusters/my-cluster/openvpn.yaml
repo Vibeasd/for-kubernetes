@@ -6,10 +6,10 @@ metadata:
 spec:
   chart: 
     spec:
-      chart: stenic
+      chart: openvpn-as
       sourceRef:
         kind: HelmRepository
-        name: stenic
+        name: openvpn-as
         namespace: kube-system
       version: '>=0.1.9'
   interval: 1m0s
