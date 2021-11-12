@@ -6,7 +6,7 @@ metadata:
 spec:
   chart: 
     spec:
-      chart: incubator
+      chart: cloudposse-incubator
       sourceRef:
         kind: HelmRepository
         name: openvpn
@@ -15,5 +15,4 @@ spec:
   interval: 1m0s
   values:
     host: test.com
-    github_team: {progrestiv}/{jlbarz}
     
