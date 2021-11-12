@@ -14,8 +14,4 @@ spec:
       version: '>=0.1.1'
   interval: 1m0s
   values:
-    host: test.com
-    github_team:
-      organization: company
-        team: team
-    
+    host: http://localhost:4200/
