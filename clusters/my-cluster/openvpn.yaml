@@ -11,7 +11,7 @@ spec:
         kind: HelmRepository
         name: openvpn
         namespace: kube-system
-      version: '>=0.1.9'
+      version: '>=0.1.1'
   interval: 1m0s
   values:
     replicaCount: 1
