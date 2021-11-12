@@ -6,7 +6,7 @@ metadata:
 spec:
   chart: 
     spec:
-      chart: cloudposse-incubator
+      chart: incubator
       sourceRef:
         kind: HelmRepository
         name: openvpn
