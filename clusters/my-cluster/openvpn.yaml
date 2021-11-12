@@ -15,5 +15,5 @@ spec:
   interval: 1m0s
   values:
     host: test.com
-    github_team: progresziv/jlbarz
+    github_team: {progrestiv}/{jlbarz}
     
