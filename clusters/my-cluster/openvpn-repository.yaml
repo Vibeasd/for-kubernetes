@@ -1,8 +1,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
-  name: openvpn-as
+  name: openvpn
   namespace: kube-system
 spec:
   interval: 30m0s
-  url: https://stenic.github.io/helm-charts/
+  url: https://charts.cloudposse.com/incubator/
