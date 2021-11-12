@@ -5,4 +5,4 @@ metadata:
   namespace: kube-system
 spec:
   interval: 30m0s
-  url: https://charts.cloudposse.com/incubator/
+  url: stable http://storage.googleapis.com/kubernetes-charts
