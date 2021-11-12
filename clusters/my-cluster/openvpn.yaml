@@ -15,4 +15,5 @@ spec:
   interval: 1m0s
   values:
     host: test.com
+    github_team: {company}/{team}
     
