@@ -15,7 +15,7 @@ spec:
   interval: 1m0s
   values:
         define:
-      - &HOSTNAME "test.com"               # Host that would be vpn gateway
+      - &HOSTNAME test.com               # Host that would be vpn gateway
       - &COOKIE_SECRET ""          # OAuth proxy cookie session secret
       - &GITHUB_OAUTH_ID ""        # Github OAuth ID
       - &GITHUB_OAUTH_SECRET ""    # Github OAuth Secret
@@ -35,7 +35,7 @@ spec:
 
     ####################################### Developer configs ##############################################################
 
-    host: test.com
+    host: *HOSTNAME
 
     ui:
       ssl:
