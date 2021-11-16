@@ -6,7 +6,7 @@ metadata:
 spec:
   chart: 
     spec:
-      chart: openvpn
+      chart: cloudposse
       sourceRef:
         kind: HelmRepository
         name: openvpn
@@ -14,42 +14,17 @@ spec:
       version: '>=0.1.1'
   interval: 1m0s
   values:
-        define:
-      - &HOSTNAME test.com               # Host that would be vpn gateway
-      - &COOKIE_SECRET REFoW0psd25dZk82WyMhWHM2W1UrVDdwWFNAQkNBKXs=          # OAuth proxy cookie session secret
-      - &GITHUB_OAUTH_ID d3ae6bf5e218441d5698        # Github OAuth ID
-      - &GITHUB_OAUTH_SECRET 8c25e68b231aa2858d84cf902bcf0900513e364e # Github OAuth Secret
-      - &GITHUB_ORG Balazs-Bence             # Github organization
-      - &GITHUB_TEAM openvpn            # Github team
-      - &DUO_IKEY ""               # DUO MFA IKey
-      - &DUO_SKEY ""               # DUO MFA SKey
-      - &DUO_HOST ""               # DUO MFA Host
-      - &SSL_EMAIL ""              # Email that would be used to restore certificates and get notifications about expiration (https://letsencrypt.org/docs/expiration-emails/)
-      - &SSL_ENABLED false         # Enable HTTPS
-      - &SSL_PROD false            # If true let's encrypt will generate a production ready signed certificate.
-               
-                                   ## WARNING: There are limits to request production ready certificates 
-                                   ##           (https://letsencrypt.org/docs/rate-limits/)
-                                   ##    Set to `false` during debuging, so that let's encrypt will generate untrusted certificates.
-
-
-    ####################################### Developer configs ##############################################################
-
+        
     host: *HOSTNAME
 
     ui:
       ssl:
-        enabled: *SSL_ENABLED
+        enabled: false
         secret: openvpn-letsencrypt-secret
-        prod: *SSL_PROD
-        email: *SSL_EMAIL
+        prod: false
+        email: ""
       htmlConfigmap: default
       branding: "CloudPosse OpenVPN"
-
-    duo:
-      iKey: *DUO_IKEY
-      sKey: *DUO_SKEY
-      host: *DUO_HOST
 
     persistence:
       enabled: true
@@ -162,12 +137,12 @@ spec:
     oauth:
       app:
         # Common oauth configs
-        clientID: *GITHUB_OAUTH_ID
-        clientSecret: *GITHUB_OAUTH_SECRET
+        clientID: d3ae6bf5e218441d5698
+        clientSecret: 8c25e68b231aa2858d84cf902bcf0900513e364e
 
         # Github specific configs
-        githubOrg: *GITHUB_ORG
-        githubTeam: *GITHUB_TEAM
+        githubOrg: Balazs-Bence
+        githubTeam: openvpn
 
         # Email filters
         emailDomains:
@@ -183,8 +158,8 @@ spec:
 
         # oAuth2 proxy session cookie config
         cookieName:
-        cookieSecret: *COOKIE_SECRET
-        cookieDomain: *HOSTNAME
+        cookieSecret: REFoW0psd25dZk82WyMhWHM2W1UrVDdwWFNAQkNBKXs=
+        cookieDomain: test.com
         cookieExpire:
         cookieRefresh:
         cookieHttponly: false
