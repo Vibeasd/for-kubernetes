@@ -15,7 +15,7 @@ spec:
   interval: 1m0s
   values:
         
-    host: https://balabenc.web.elte.hu/
+    host: test.com
 
     ui:
       ssl:
@@ -51,7 +51,7 @@ spec:
         # oAuth2 proxy session cookie config
         cookieName:
         cookieSecret: REFoW0psd25dZk82WyMhWHM2W1UrVDdwWFNAQkNBKXs=
-        cookieDomain: https://balabenc.web.elte.hu/
+        cookieDomain: test.com
         cookieExpire:
         cookieRefresh:
         cookieHttponly: false
