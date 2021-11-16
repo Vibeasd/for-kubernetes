@@ -18,6 +18,7 @@ spec:
     host: *HOSTNAME
 
     ui:
+      enabled: false
       ssl:
         enabled: false
         secret: openvpn-letsencrypt-secret
