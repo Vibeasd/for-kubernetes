@@ -18,7 +18,7 @@ spec:
     host: https://balabenc.web.elte.hu/
 
     ui:
-      enabled: false
+      enabled: true
       ssl:
         enabled: false
         secret: openvpn-letsencrypt-secret
