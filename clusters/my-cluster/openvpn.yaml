@@ -16,11 +16,11 @@ spec:
   values:
         define:
       - &HOSTNAME test.com               # Host that would be vpn gateway
-      - &COOKIE_SECRET ""          # OAuth proxy cookie session secret
-      - &GITHUB_OAUTH_ID ""        # Github OAuth ID
-      - &GITHUB_OAUTH_SECRET ""    # Github OAuth Secret
-      - &GITHUB_ORG ""             # Github organization
-      - &GITHUB_TEAM ""            # Github team
+      - &COOKIE_SECRET REFoW0psd25dZk82WyMhWHM2W1UrVDdwWFNAQkNBKXs=          # OAuth proxy cookie session secret
+      - &GITHUB_OAUTH_ID d3ae6bf5e218441d5698        # Github OAuth ID
+      - &GITHUB_OAUTH_SECRET 8c25e68b231aa2858d84cf902bcf0900513e364e # Github OAuth Secret
+      - &GITHUB_ORG Balazs-Bence             # Github organization
+      - &GITHUB_TEAM openvpn            # Github team
       - &DUO_IKEY ""               # DUO MFA IKey
       - &DUO_SKEY ""               # DUO MFA SKey
       - &DUO_HOST ""               # DUO MFA Host
