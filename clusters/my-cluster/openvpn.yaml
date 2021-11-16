@@ -6,7 +6,7 @@ metadata:
 spec:
   chart: 
     spec:
-      chart: openvpn
+      chart: incubator
       sourceRef:
         kind: HelmRepository
         name: openvpn
