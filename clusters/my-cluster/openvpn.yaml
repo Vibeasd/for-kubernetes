@@ -6,7 +6,7 @@ metadata:
 spec:
   chart: 
     spec:
-      chart: openvpnasd
+      chart: openvpn
       sourceRef:
         kind: HelmRepository
         name: openvpn
