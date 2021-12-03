@@ -9,7 +9,7 @@ spec:
       chart: elastic
       sourceRef:
         kind: HelmRepository
-        name: elasticsearch
+        name: elastic
       version: ">=7.15.0"
   values:
     clusterName: "elasticsearch"
