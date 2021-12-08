@@ -11,4 +11,4 @@ spec:
         kind: HelmRepository
         name: elastic
       version: ">=7.15.0"
-    interval: 1m0s
+  interval: 1m0s
